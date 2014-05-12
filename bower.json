@@ -1,0 +1,26 @@
+{
+  "name": "Strakker",
+  "version": "0.0.0",
+  "homepage": "https://github.com/frederickfogerty/strakker",
+  "authors": [
+    "Frederick Fogerty <freelyfred@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember": null,
+    "ember-data": "~1.0",
+    "jquery-mobile-bower": null,
+    "ember-simple-auth": null
+  },
+  "resolutions": {
+    "ember": ">=1.2"
+  }
+}

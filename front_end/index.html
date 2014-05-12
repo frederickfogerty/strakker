@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>Strakker</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="/bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/bower_components/jquery/jquery.js"></script>
+
+    <script>
+        // JQM init event handler
+        $(document).bind('mobileinit', function() {
+            $.mobile.ajaxEnabled = false;
+            $.mobile.pushStateEnabled = false;
+            $.mobile.linkBindingEnabled = false;
+            $.mobile.hashListeningEnabled = false;
+
+            // Remove page from DOM when it's being replaced (if you use pages)
+            // $('div[data-role="page"]').live('pagehide', function (event, ui) {
+            //     $(event.currentTarget).remove();
+            // });
+        });
+    </script>
+    <script src="/bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.2.js"></script>
+    <script src="/bower_components/handlebars/handlebars.js"></script>
+    <script src="/bower_components/ember/ember.js"></script>
+    <script src="/bower_components/ember-data/ember-data.js"></script>
+    <script src="js/app.js"></script>
+
+</head>
+<body>
+    <script type="text/x-handlebars" data-template-name="application">
+        <div data-role="page" class="ui-page-active">
+        <div data-role="header">
+            <h1>Home page - {{currentUser}}</h1>
+            <a data-icon="info" data-iconpos="notext" {{action "about" target="view"}}></a>
+        </div>
+        {{outlet}}
+        </div>
+    </script>
+    <script type="text/x-handlebars" data-template-name="users/new">
+        <h2>Register</h2>
+
+        <form {{action "createUser" on="submit"}}>
+            <div>
+                <label>Full Name</label>
+                {{input type="text" value=name placeholder="Full Name"}}
+            </div>
+
+            <div>
+                <label>Email Address</label>
+                {{input type="email" value=email placeholder="Email Address"}}
+            </div>
+
+            <div>
+                <label>Username</label>
+                {{input type="text" value=username placeholder="Username"}}
+            </div>
+
+            <div>
+                <label>Password</label>
+                {{input type="password" value=password placeholder="Password"}}
+            </div>
+
+            <div>
+                <label>Confirm Password</label>
+                {{input type="password" value=password_confirmation placeholder="Confirm Password"}}
+            </div>
+
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </script>
+
+    
+    
+    
+
+</body>
+</html>
