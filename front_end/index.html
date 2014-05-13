@@ -1,10 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Strakker</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="/bower_components/jquery-mobile-bower/css/jquery.mobile-1.4.2.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="/bower_components/jquery/jquery.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/foundation/js/foundation.min.js"></script>
     <script src="/bower_components/handlebars/handlebars.js"></script>
     <script src="/bower_components/ember/ember.js"></script>
@@ -12,76 +11,6 @@
     <script src="/bower_components/ember-simple-auth/ember-simple-auth.js"></script>
     <script src="/bower_components/ember-simple-auth/ember-simple-auth-oauth2.js"></script>
     <script src="js/app.js"></script>
-
+    <script src="js/templates.js"></script>
 </head>
-<body>
-    <script type="text/x-handlebars" data-template-name="application">
-        <div data-role="header">
-            <h1>Home page {{#if session.isAuthenticated}} (Logged In!) {{/if}}</h1>
-            <a data-icon="info" data-iconpos="notext" {{action "about" target="view"}}></a>
-        </div>
-        {{outlet}}
-        </div>
-    </script>
-    <script type="text/x-handlebars" data-template-name="users/new">
-        <h2>Register</h2>
-
-        <form {{action "createUser" on="submit"}}>
-            <div>
-                <label>Full Name</label>
-                {{input type="text" value=name placeholder="Full Name"}}
-            </div>
-
-            <div>
-                <label>Email Address</label>
-                {{input type="email" value=email placeholder="Email Address"}}
-            </div>
-
-            <div>
-                <label>Username</label>
-                {{input type="text" value=username placeholder="Username"}}
-            </div>
-
-            <div>
-                <label>Password</label>
-                {{input type="password" value=password placeholder="Password"}}
-            </div>
-
-            <div>
-                <label>Confirm Password</label>
-                {{input type="password" value=password_confirmation placeholder="Confirm Password"}}
-            </div>
-
-            <br>
-            <button type="submit">Submit</button>
-        </form>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="login">
-        <div class="page-header">
-            <h1>Login</h1>
-        </div>
-        {{! login form; the fields must be named "identification" and "password"; the controller action is "authenticate" }}
-        <form>
-    <label for="slider-1">Slider:</label>
-    <input type="range" name="slider-1" id="slider-1" min="0" max="100" value="50">
-</form>
-        <form {{action 'authenticate' on='submit'}}>
-            <div class="form-group">
-                <label for="identification">Login</label>
-                {{input id='identification' placeholder='Enter Login' class='form-control' value=identification}}
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                {{input id='password' placeholder='Enter Password' class='form-control' type='password' value=password}}
-            </div>
-            <button type="submit" class="btn btn-default">Login</button>
-      </form>
-    </script>
-
-    
-    
-    
-
-</body>
 </html>

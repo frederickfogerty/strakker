@@ -13,9 +13,8 @@
     "grunt-contrib-watch": "latest",
     "grunt-contrib-coffee": "latest",
     "grunt-contrib-compass": "latest",
-    "grunt-sass": "latest",
-    "node-sass": "latest",
     "load-grunt-tasks": "latest",
-    "grunt-newer": "latest"
+    "grunt-newer": "latest",
+    "grunt-ember-templates": "~0.4"
   }
 }

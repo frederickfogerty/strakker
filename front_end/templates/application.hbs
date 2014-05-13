@@ -1,0 +1,22 @@
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <h1>{{#link-to 'index'}}Strakker{{/link-to}}</h1>
+        </li>
+        <li class="toggle-topbar menu-icon"></li>
+    </ul>
+    <section class="top-bar-section">
+        <ul class="right">
+            <li>{{#link-to 'index'}}Dashboard{{/link-to}}</li>
+            {{#if session.isAuthenticated}}
+                <li {{action 'invalidateSession'}}><a>Logout</a></li>
+            {{else}}
+                <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+            {{/if}}
+        </ul>
+    </section>
+</nav>
+<h1>Home page {{#if session.isAuthenticated}} (Logged In!) {{/if}}</h1>
+<a data-icon="info" data-iconpos="notext" {{action "about" target="view"}}></a>
+{{outlet}}
+</div>
