@@ -1,29 +1,14 @@
 module.exports = function(grunt) {
-
-    // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        uglify: {
+        sass: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yy") %> */\n'
+                includePaths: ['bower_components/foundation/scss']
             },
-            js: {
-                files: {
-                    'dev/js/main.min.js' : ['js/main.js']
-                }
-            },
-            build: {
-                src: '<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.min.js'
-            }
-        },
-        compass: {
             dev: {
-                options: {
-                    sassDir: 'front_end/sass',
-                    cssDir: 'dev/css'
+                files: {
+                    'dev/css/style.css': 'front_end/sass/style.sass'
                 }
-                    
             }
         },
         copy: {
@@ -46,44 +31,32 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            // js: {
-            //     files: ['js/*.js'],
-            //     tasks: ['uglify:js'],
-            //     options: {
-            //         livereload: true,
-            //         atBegin: true
-            //     }
-            // },
             css: {
                 files: ['front_end/sass/*.sass'],
-                tasks: ['compass:dev'],
+                tasks: ['sass:dev'],
                 options: {
-                    livereload: true,
-                    atBegin: true
+                    livereload: true
                 }
             },
             statics: {
                 files: ['front_end/*.html', 'front_end/libs/**', 'front_end/res/**', 'api/**', 'bower_components/**'],
                 tasks: ['newer:copy:main'],
                 options: {
-                    livereload: true,
-                    atBegin: true
+                    livereload: true
                 }
             },
             coffee: {
                 files: ['front_end/coffee/**'],
                 tasks: ['coffee:main'],
                 options: {
-                    livereload: true,
-                    atBegin: true
+                    livereload: true
                 }
             }
         }
     });
 
     require('load-grunt-tasks')(grunt)
-
-    // Default task(s).
-    // grunt.registerTask('watch', ['watch']);
+    grunt.registerTask('build', ['coffee', 'sass:dev', 'copy'])
+    grunt.registerTask('default', ['build','watch']);
 
 };

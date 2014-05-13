@@ -1,15 +1,5 @@
 Strakker.Router.map () ->
-    @resource 'auth', () ->
-        @route 'new'
-    @resource 'users', () ->
-        @route 'new'
+    @route 'login'
+    @route 'protected'
 
-Strakker.ApplicationRoute = Ember.Route.extend
-    init: () ->
-        @_super()
-        Strakker.AuthManager = AuthManager.create()
-
-    actions: 
-        logout: () ->
-            Strakker.AuthManager.reset()
-            this.transitionTo 'index'
+Strakker.ApplicationRoute = Ember.Route.extend Ember.SimpleAuth.ApplicationRouteMixin
