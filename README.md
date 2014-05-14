@@ -21,6 +21,12 @@ $ npm install
 
 These will download all the dependencies needed from the internet. If you have issues with this, run and hide, and call your local [sysadmin](mailto:frederickfogerty@gmail.com) for some help.
 
+```sh
+$ grunt
+```
+
+After your dependencies are installed, run this command, and it will compile the code (and watch for any changes) and copy it to `dev/`. Point your webserver to this address.
+
 #### (A very small) Git Boot-camp
 
 When developing in your own repository, periodically run `git pull` to see if there are any changes that someone else has created while you have been developing. This should run without a hitch, but if it doesn't- yep, you've got it- run and hide, and call your local [sysadmin](mailto:frederickfogerty@gmail.com) for some help.
