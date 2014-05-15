@@ -1,0 +1,16 @@
+<div class="row" id="recover-header">
+    <div class="small-12">
+        <h1>Recover Password</h1>
+    </div>
+</div>
+<div class="row" id="recover">
+    <div class="small-12 medium-6 small-centered columns">
+        <form {{action 'recover' on='submit'}}>
+            <div class="alert-box success">{{status}}</div>
+            {{input id='email' placeholder='Email' value=email}}
+            <button type="submit">Recover</button>
+      </form>
+    </div>
+</div>
+        
+        

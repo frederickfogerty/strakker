@@ -12,7 +12,7 @@
             {{! <label for="password">Password</label> }}
             {{input id='password' placeholder='Password' type='password' value=password}}
             <button type="submit">Login</button>
-            <a href="#" id="recover">Recover Password</a>
+            {{#link-to 'auth.recover' id='recover'}}Recover Password{{/link-to}}
       </form>
     </div>
 </div>

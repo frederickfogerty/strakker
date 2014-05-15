@@ -1,19 +1,19 @@
 <nav class="top-bar" data-topbar>
     <ul class="title-area">
         <li class="name">
-            <h1>{{#link-to 'index'}}Strakker{{/link-to}}</h1>
+            <h1>{{#link-to 'dashboard'}}Strakker{{/link-to}}</h1>
         </li>
         <li class="toggle-topbar menu-icon"></li>
     </ul>
     <section class="top-bar-section">
         <ul class="right">
             {{#if session.isAuthenticated}}
-                {{#link-to 'index' tagName="li" href=false}}<a {{bindAttr href="view.href"}}Dashboard</a>{{/link-to}}
+                {{#link-to 'dashboard' tagName="li" href=false}}<a {{bind-attr href="view.href"}}Dashboard</a>{{/link-to}}
             {{/if}}
             {{#if session.isAuthenticated}}
                 <li {{action 'invalidateSession'}}><a>Logout</a></li>
             {{else}}
-                {{#linkTo "login" tagName="li" href=false}}<a {{bindAttr href="view.href"}}>Login</a>{{/linkTo}}
+                {{#link-to "auth.login" tagName="li" href=false}}<a {{bind-attr href="view.href"}}>Login</a>{{/link-to}}
             {{/if}}
         </ul>
     </section>

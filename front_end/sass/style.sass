@@ -1,6 +1,6 @@
 @import "../../bower_components/foundation/scss/foundation"
 
-#login-header 
+#login-header, #recover-header 
     h1
         text-align: center
         margin-top: 50px
@@ -18,3 +18,8 @@
     #recover
         font:
             size: 11px
+
+#recover 
+    @extend #login
+    button[type=submit]
+        margin: 30px auto 20px auto

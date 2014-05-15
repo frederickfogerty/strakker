@@ -36,7 +36,7 @@ module.exports = function(grunt) {
                     templateBasePath: 'front_end/templates/'
                 },
                 files: {
-                    'dev/js/templates.js': ['front_end/templates/*.hbs']
+                    'dev/js/templates.js': ['front_end/templates/**/*.hbs']
                 }    
             }
         },
