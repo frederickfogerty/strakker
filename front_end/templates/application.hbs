@@ -7,11 +7,13 @@
     </ul>
     <section class="top-bar-section">
         <ul class="right">
-            <li>{{#link-to 'index'}}Dashboard{{/link-to}}</li>
+            {{#if session.isAuthenticated}}
+                {{#link-to 'index' tagName="li" href=false}}<a {{bindAttr href="view.href"}}Dashboard</a>{{/link-to}}
+            {{/if}}
             {{#if session.isAuthenticated}}
                 <li {{action 'invalidateSession'}}><a>Logout</a></li>
             {{else}}
-                <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+                {{#linkTo "login" tagName="li" href=false}}<a {{bindAttr href="view.href"}}>Login</a>{{/linkTo}}
             {{/if}}
         </ul>
     </section>
