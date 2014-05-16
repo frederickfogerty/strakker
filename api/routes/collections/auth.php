@@ -15,9 +15,9 @@ return call_user_func(function(){
 
 	$exampleCollection
 		// VERSION NUMBER SHOULD BE FIRST URL PARAMETER, ALWAYS
-		->setPrefix('/v1/example')
+		->setPrefix('/v1/auth')
 		// Must be a string in order to support lazy loading
-		->setHandler('\PhalconRest\Controllers\ExampleController')
+		->setHandler('\PhalconRest\Controllers\AuthController')
 		->setLazy(true);
 
 	// Set Access-Control-Allow headers.
