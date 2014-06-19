@@ -1,20 +1,23 @@
 <nav class="top-bar" data-topbar>
     <ul class="title-area">
         <li class="name">
-            <h1>{{#link-to 'dashboard'}}Strakker{{/link-to}}</h1>
+            <h1>{{#link-to 'dashboard'}}Strakker - {{currentPath}}{{/link-to}}</h1>
         </li>
-        <li class="toggle-topbar menu-icon"></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
     <section class="top-bar-section">
         <ul class="right">
-            {{#if session.isAuthenticated}}
-                {{#link-to 'dashboard' tagName="li" href=false}}<a {{bind-attr href="view.href"}}Dashboard</a>{{/link-to}}
-            {{/if}}
+            {{#link-to "questionnaire.list" tagName="li" href=false}}<a {{bind-attr href="view.href"}}>Questionnaires</a>{{/link-to}}
+            {{!-- {{#if session.isAuthenticated}} --}}
+            {{#link-to 'dashboard' tagName="li" href=false}}<a {{bind-attr href="view.href"}}>Dashboard</a>{{/link-to}}
+            {{#link-to "account" tagName="li" href=false}}<a {{bind-attr href="view.href"}}>My Account</a>{{/link-to}}
+            {{!-- {{/if}} --}}
             {{#if session.isAuthenticated}}
                 <li {{action 'invalidateSession'}}><a>Logout</a></li>
             {{else}}
                 {{#link-to "auth.login" tagName="li" href=false}}<a {{bind-attr href="view.href"}}>Login</a>{{/link-to}}
             {{/if}}
+
         </ul>
     </section>
 </nav>

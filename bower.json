@@ -19,10 +19,11 @@
     "ember-data": "~1.0",
     "jquery-mobile-bower": null,
     "ember-simple-auth": "~0.4.0",
-    "foundation": "~5.2.2"
+    "foundation": "~5.2.2",
+    "ember-localstorage-adapter": "~0.2.0"
   },
   "resolutions": {
-    "ember": "1.5.1",
+    "ember": ">=1.2",
     "jquery": ">= 2.1.0"
   }
 }

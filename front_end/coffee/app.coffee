@@ -4,9 +4,11 @@ Ember.Application.initializer
         Ember.SimpleAuth.setup(container, application)
 
 window.Strakker = Ember.Application.create()
-Strakker.Store = DS.Store.extend();
-Strakker.inject('component', 'store', 'store:main');
+
+# Strakker.ApplicationAdapter = DS.LSAdapter.extend()
+Strakker.ApplicationAdapter = DS.FixtureAdapter
+# Strakker.Store = DS.Store.extend();
+Strakker.inject('component', 'store', 'store:main')
 
 $ () ->
     $(document).foundation()
-
