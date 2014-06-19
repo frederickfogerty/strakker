@@ -6,7 +6,9 @@
 <div class="row" id="recover">
     <div class="small-12 medium-6 small-centered columns">
         <form {{action 'recover' on='submit'}}>
-            <div class="alert-box success">{{status}}</div>
+            {{#if alert.message}}
+                <div {{bind-attr class="alert.type :alert-box"}}>{{alert.message}}</div>
+            {{/if}}
             {{input id='email' placeholder='Email' value=email}}
             <button type="submit">Recover</button>
       </form>

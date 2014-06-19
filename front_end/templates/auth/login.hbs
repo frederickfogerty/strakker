@@ -7,11 +7,15 @@
     <div class="small-12 medium-4 small-centered columns">
         {{! login form; the fields must be named "identification" and "password"; the controller action is "authenticate" }}
         <form {{action 'authenticate' on='submit'}}>
+            {{#if loginFailed}}
+                <div class="alert alert-box">Sorry, your username or password is incorrect.</div>
+            {{/if}}
+            
             {{! <label for="identification">Login</label> }}
             {{input id='identification' placeholder='Email' value=identification}}
             {{! <label for="password">Password</label> }}
             {{input id='password' placeholder='Password' type='password' value=password}}
-            <button type="submit">Login</button>
+            <button type="submit" {{bind-attr disabled="isProcessing"}}>Login</button>
             {{#link-to 'auth.recover' id='recover'}}Recover Password{{/link-to}}
       </form>
     </div>
