@@ -1,17 +1,8 @@
-# Strakker API 
+# Strakker API (v1)
+This document will (hopefully) document all the required API methods for strakker. It is written in [GFM[(https://help.github.com/articles/github-flavored-markdown)
 
-<table width="60%" border="1">
-<tr><th width="20%" align="left">Ver</th><th width="50%" align="left">Comment</th><th width="30%" align="left">Who</th></tr>
-<tr><td>1.0</td><td>Initial document</td><td>Frederick</td></tr>
-<tr><td>1.1</td><td>Added link to GFM, added version control</td><td>Rory</td></tr>
-</table>
-
-This document contains all the required API methods for strakker. It is written in [GFM](https://help.github.com/articles/github-flavored-markdown)
-
-The Phalcon documentation is [here](http://docs.phalconphp.com/en/latest/index.html)
-
-##Default JSON structure
 The default structure for data return for ember-data (see [here](http://emberjs.com/guides/models/connecting-to-an-http-server/) and [here](http://blog.embed.ly/post/50012690904/ember-at-embedly-tutorial-models-and-ember-data)) is: 
+
 ```
 (JSON)
 	item_type:
@@ -58,7 +49,7 @@ URI: /api/v1/auth/token
 Implements OAuth 2 Password Grant methods
 
 ### Register
-**NOTE: only called from CMS. A new customer will be reffered to the website where there will be a form to complete and a PayPal link. Once they hae paid the ipn handler will create a login and password and send them the link to the lgin screen**
+**NOTE: probably redundant from the strakker system. We will refer a new customer to the website where there will be a form to complete and a PayPal link. Once they hae paid the ipn handler will create a login and password (through this API) and send them the link to the lgin screen**
 
 ```
 Request Type: POST
