@@ -58,7 +58,7 @@ URI: /api/v1/auth/token
 Implements OAuth 2 Password Grant methods
 
 ### Register
-**NOTE: only called from CMS. A new customer will be reffered to the website where there will be a form to complete and a PayPal link. Once they hae paid the ipn handler will create a login and password and send them the link to the lgin screen**
+**NOTE: only called from CMS. A new customer will be refered to the website where there will be a form to complete and a PayPal link. Once they have paid, the ipn handler will create a login and password and send them the link to the login screen**
 
 ```
 Request Type: POST
