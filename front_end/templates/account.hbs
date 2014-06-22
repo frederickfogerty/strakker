@@ -1,10 +1,12 @@
-<div class="row">
-    <div class="small-12"><h1>Swag - {{model.name}}</h1>
+<div class="row" id="account">
+    <div class="small-12 medium-6 small-centered columns">
+        <img {{bind-attr src=model.gravatar_hash}} alt="">
+        <h1>{{model.name}}</h1>
         <ul>
-            <li><span class="label"></span><span class="value"></span></li>
-            <li><span class="label"></span><span class="value"></span></li>
-            <li><span class="label"></span><span class="value"></span></li>
-            <li><span class="label"></span><span class="value"></span></li>
+            <li><span class="alabel">e-mail</span><span class="value">{{model.email}}</span></li>
+            <li><span class="alabel">subscription type</span><span class="value">{{model.subscription_type}}</span></li>
+            <li><span class="alabel">subscription expiry</span><span class="value">{{model.formatted_subscription_expiry}}</span></li>
+            {{!-- <li><span class="alabel"></span><span class="value"></span></li> --}}
         </ul>
     </div>
 </div>
