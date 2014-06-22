@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    {cwd: 'front_end/', expand: true, src: ['*.html', 'res/**', 'css/**'], dest: 'dev/'},
+                    {cwd: 'front_end/', expand: true, src: ['*.html', 'res/**', 'css/**', 'js/**'], dest: 'dev/'},
                     {cwd: 'api', expand: true, src: ['**'], dest: 'dev/api', dot: true},
                     {cwd: 'bower_components', expand: true, src: ['**'], dest: 'dev/bower_components'}
                 ],
