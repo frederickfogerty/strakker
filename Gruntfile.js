@@ -7,16 +7,16 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'dev/css/style.css': 'front_end/sass/style.sass'
+                    'build/css/style.css': 'src/sass/style.sass'
                 }
             }
         },
         copy: {
             main: {
                 files: [
-                    {cwd: 'front_end/', expand: true, src: ['*.html', 'res/**', 'css/**', 'js/**'], dest: 'dev/'},
-                    {cwd: 'api', expand: true, src: ['**'], dest: 'dev/api', dot: true},
-                    {cwd: 'bower_components', expand: true, src: ['**'], dest: 'dev/bower_components'}
+                    {cwd: 'src/', expand: true, src: ['*.html', 'res/**', 'css/**', 'js/**'], dest: 'build/'},
+                    {cwd: 'src/api', expand: true, src: ['**'], dest: 'build/src/api', dot: true},
+                    {cwd: 'bower_components', expand: true, src: ['**'], dest: 'build/bower_components'}
                 ],
                 nonull: true
             }
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         coffee: {
             main: {
                 files: {
-                    'dev/js/app.js': ['front_end/coffee/**/*.coffee']
+                    'build/js/app.js': ['src/coffee/**/*.coffee']
                 }
             }
         },
@@ -33,10 +33,10 @@ module.exports = function(grunt) {
         emberTemplates: {
             dist: {
                 options: {
-                    templateBasePath: 'front_end/templates/'
+                    templateBasePath: 'src/templates/'
                 },
                 files: {
-                    'dev/js/templates.js': ['front_end/templates/**/*.hbs']
+                    'build/js/templates.js': ['src/templates/**/*.hbs']
                 }    
             }
         },
@@ -44,36 +44,36 @@ module.exports = function(grunt) {
         compass: {
             dist: {
                 options: {
-                    sassDir: 'front_end/sass',
-                    cssDir: 'dev/css'
+                    sassDir: 'src/sass',
+                    cssDir: 'build/css'
                 }
             }
         },
 
         watch: {
             css: {
-                files: ['front_end/sass/*.sass'],
+                files: ['src/sass/*.sass'],
                 tasks: ['compass:dist'],
                 options: {
                     livereload: true
                 }
             },
             statics: {
-                files: ['front_end/*.html', 'front_end/res/**', 'api/**', 'bower_components/**'],
+                files: ['src/*.html', 'src/res/**', 'src/api/**', 'bower_components/**'],
                 tasks: ['newer:copy:main'],
                 options: {
                     livereload: true
                 }
             },
             coffee: {
-                files: ['front_end/coffee/**'],
+                files: ['src/coffee/**'],
                 tasks: ['coffee:main'],
                 options: {
                     livereload: true
                 }
             },
             emberTemplates: {
-                files: ['front_end/templates/**'],
+                files: ['src/templates/**'],
                 tasks: ['emberTemplates:dist'],
                 options: {
                     livereload: true
