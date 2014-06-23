@@ -10,5 +10,5 @@ Strakker.ApplicationAdapter = DS.FixtureAdapter
 # Strakker.Store = DS.Store.extend();
 Strakker.inject('component', 'store', 'store:main')
 
-$ () ->
+$ ->
     $(document).foundation()
