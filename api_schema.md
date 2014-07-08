@@ -1,10 +1,9 @@
 # Strakker API 
 
-<table width="60%" border="1">
-<tr><th width="20%" align="left">Ver</th><th width="50%" align="left">Comment</th><th width="30%" align="left">Who</th></tr>
-<tr><td>1.0</td><td>Initial document</td><td>Frederick</td></tr>
-<tr><td>1.1</td><td>Added link to GFM, added version control</td><td>Rory</td></tr>
-</table>
+|Ver    |Comment					| Who       |
+|-------|--------------				|-----------|
+|1.0    |Initial document			|Frederick|
+|1.1    |Added link to GFM, added version control|Rory|
 
 This document contains all the required API methods for strakker. It is written in [GFM](https://help.github.com/articles/github-flavored-markdown)
 
