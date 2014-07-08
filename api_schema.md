@@ -11,6 +11,7 @@ The Phalcon documentation is [here](http://docs.phalconphp.com/en/latest/index.h
 
 ##Default JSON structure
 The default structure for data return for ember-data (see [here](http://emberjs.com/guides/models/connecting-to-an-http-server/) and [here](http://blog.embed.ly/post/50012690904/ember-at-embedly-tutorial-models-and-ember-data)) is: 
+
 ```
 (JSON)
 	item_type:
@@ -20,7 +21,6 @@ The default structure for data return for ember-data (see [here](http://emberjs.
 	]
 	[meta:]
 		attr: val
-				
 ```
 Errors are handled by headers with `ember-data`, AFAIK.
 
