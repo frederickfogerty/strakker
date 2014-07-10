@@ -1,4 +1,11 @@
-<div class="row">
+<div class="row questionnaire-list header">
+    <div class="small-8 columns">
+        <h1>Questionnaires</h1>
+    </div>
+    <div class="small-4 columns"><a {{action "newQuestionnaire"}} class="button">New</a></div>
+</div>
+
+<div class="row questionnaire-list">
     <div class="small-12 columns">
         <table>
             <thead>
@@ -16,7 +23,7 @@
                             <td>{{id}}</td>
                             <td>{{name}}</td>
                             <td>{{created}}</td>
-                            <td>Yes</td>
+                            <td>Obviously</td>
                         </tr>
                     {{/with}}
                 {{/each}}</tbody>

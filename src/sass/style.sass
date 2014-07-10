@@ -1,13 +1,11 @@
 @import "../../bower_components/foundation/scss/foundation"
 
-#login-header, #recover-header 
-    h1
-        text-align: center
-        margin-top: 50px
-        margin-bottom: 50px
+@mixin general_page_styles
+    .header
+    
 
-#login
-    & > div
+.login
+    .box
         border: 1px solid #ccc
         padding-top: 20px
         padding-bottom: 20px
@@ -18,13 +16,18 @@
     #recover
         font:
             size: 11px
+    h1
+        text-align: center
+        margin-top: 50px
+        margin-bottom: 50px
 
-#recover 
-    @extend #login
+.recover 
+    @extend .login
     button[type=submit]
         margin: 30px auto 20px auto
 
-#account
+
+.account
     &>div
         margin-top: 20px
         text-align: center
@@ -53,4 +56,20 @@
                     display: block
                     text-align: center
                     width: 100%
-                
+
+.questionnaire-list
+    &.header
+        text-align: right
+        h1
+            text-align: left
+        .button
+            margin: 10px
+
+.questionnaire-edit
+    ul
+
+        li
+            color: #000
+            font-size: 20px
+
+

@@ -5,7 +5,7 @@ Strakker.Router.map () ->
     @resource 'questionnaire', () ->
         @route 'list'
         @route 'new'
-        @route 'edit'
+        @route 'edit', {path: 'edit/:questionnaire_id'}
     @route 'account'
     @route 'dashboard', {path: "/"}
 
